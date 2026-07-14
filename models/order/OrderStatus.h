@@ -3,7 +3,7 @@
 
 #include <string>
 
-enum OrderStatus {PREPARING, READY, DELIVERED};
+enum OrderStatus {PREPARING, READY, DELIVERED, UNKNOWN};
 std::string orderStatusToString(OrderStatus status);
 
 #endif

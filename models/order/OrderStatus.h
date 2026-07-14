@@ -1,0 +1,9 @@
+#ifndef ORDERSTATUS_H
+#define ORDERSTATUS_H
+
+#include <string>
+
+enum OrderStatus {PREPARING, READY, DELIVERED};
+std::string orderStatusToString(OrderStatus status);
+
+#endif

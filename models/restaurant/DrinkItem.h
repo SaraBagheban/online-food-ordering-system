@@ -12,7 +12,7 @@ public:
     DrinkItem(int id, const std::string& name,
               const std::string& description,
               double basePrice, bool available,
-              double volume);
+              bool specialItem, double volume);
 
               
     double getVolume() const;

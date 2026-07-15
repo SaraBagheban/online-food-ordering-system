@@ -8,8 +8,8 @@ DrinkItem::DrinkItem() : MenuItem(), volume(0) {
 DrinkItem::DrinkItem(int id, const std::string& name,
                      const std::string& description,
                      double basePrice, bool available,
-                     double volume)
-    : MenuItem(id, name, description, basePrice, available),
+                     bool specialItem, double volume)
+    : MenuItem(id, name, description, basePrice, available, specialItem),
       volume(volume) {
 }
 
@@ -30,6 +30,7 @@ double DrinkItem::calculatePrice() const {
 void DrinkItem::showDetails() const {
     std::cout << "Name: " << getName() << std::endl;
     std::cout << "Description: " << getDescription() << std::endl;
+    std::cout << "Special Item: " << (isSpecialItem() ? "Yes" : "No") << std::endl;
     std::cout << "Base Cup Price: " << getBasePrice() << std::endl;
     std::cout << "Volume: " << volume << " x standard cup size" << std::endl;
     std::cout << "Calculated Price: " << calculatePrice() << std::endl;

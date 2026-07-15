@@ -12,7 +12,7 @@ public:
     FoodItem(int id, const std::string& name,
              const std::string& description,
              double basePrice, bool available,
-             int cookTime);
+             bool specialItem, int cookTime);
 
              
     int getCookTime() const;

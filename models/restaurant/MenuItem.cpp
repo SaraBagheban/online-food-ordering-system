@@ -1,14 +1,14 @@
 #include "MenuItem.h"
 
 MenuItem::MenuItem() : id(0), name(""), description(""),
-      basePrice(0), available(true) {
+      basePrice(0), available(true), specialItem(false) {
 }
 
 MenuItem::MenuItem(int id, const std::string& name,
                    const std::string& description,
-                   double basePrice, bool available)
+                   double basePrice, bool available, bool specialItem)
     : id(id), name(name), description(description),
-      basePrice(basePrice), available(available) {
+      basePrice(basePrice), available(available), specialItem(specialItem) {
 }
 
 MenuItem::~MenuItem() {
@@ -35,6 +35,10 @@ bool MenuItem::getAvailable() const {
     return available;
 }
 
+bool MenuItem::isSpecialItem() const {
+    return specialItem;
+}
+
 
 
 void MenuItem::setId(int id) {
@@ -55,4 +59,8 @@ void MenuItem::setBasePrice(double basePrice) {
 
 void MenuItem::setAvailable(bool available) {
     this->available = available;
+}
+
+void MenuItem::setSpecialItem(bool specialItem) {
+    this->specialItem = specialItem;
 }

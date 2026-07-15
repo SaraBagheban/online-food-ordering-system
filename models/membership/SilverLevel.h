@@ -1,9 +1,9 @@
-#ifndef NORMALLEVEL_H
-#define NORMALLEVEL_H
+#ifndef SILVERLEVEL_H
+#define SILVERLEVEL_H
 
 #include "MembershipLevel.h"
 
-class NormalLevel : public MembershipLevel {
+class SilverLevel : public MembershipLevel {
 public:
     std::string getLevelName() const override;
 

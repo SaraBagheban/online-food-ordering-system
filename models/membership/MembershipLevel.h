@@ -13,7 +13,7 @@ public:
 
     virtual double getPointMultiplier() const = 0;
 
-    virtual double getShippingCost(double shippingCost) const = 0;
+    virtual double getShippingCost(double shippingCost, double orderSubtotal) const = 0;
 
     virtual int getRequiredPoints() const = 0;
 

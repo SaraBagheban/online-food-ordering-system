@@ -12,7 +12,7 @@ double NormalLevel::getPointMultiplier() const {
     return 1.0;
 }
 
-double NormalLevel::getShippingCost(double shippingCost) const {
+double NormalLevel::getShippingCost(double shippingCost, double orderSubtotal) const {
     return shippingCost;
 }
 

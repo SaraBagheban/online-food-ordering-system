@@ -25,12 +25,17 @@ CREATE TABLE users (
 
 CREATE TABLE restaurants (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    owner_id INT NOT NULL UNIQUE,
     name VARCHAR(100) NOT NULL,
     address VARCHAR(255) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     description TEXT,
     prep_time INT NOT NULL,
-    is_active BOOLEAN NOT NULL DEFAULT TRUE
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+
+    FOREIGN KEY (owner_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE
 );
 
 

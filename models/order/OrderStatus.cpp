@@ -10,5 +10,9 @@ std::string orderStatusToString(OrderStatus status) {
     if (status == DELIVERED)
         return "Delivered";
 
+    if (status == CANCELLED)
+    return "Cancelled";
+
+
     return "Unknown";
 }

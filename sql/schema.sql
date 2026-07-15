@@ -66,6 +66,20 @@ CREATE TABLE cart (
 );
 
 
+CREATE TABLE cart_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cart_id INT NOT NULL,
+    menu_item_id INT NOT NULL,
+    quantity INT NOT NULL,
+
+    FOREIGN KEY (cart_id)
+        REFERENCES cart(id)
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (menu_item_id)
+        REFERENCES menu_items(id)
+);
+
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -73,7 +87,7 @@ CREATE TABLE orders (
 
     status ENUM(
         'PREPARING','READY','DELIVERED','CANCELLED','UNKNOWN'
-    ) NOT NULL DEFAULT 'Unknown',
+    ) NOT NULL DEFAULT 'UNKNOWN',
 
     membership_level ENUM(
         'Normal','Silver','Gold','VIP'
